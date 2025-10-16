@@ -1,0 +1,7 @@
+// Suspicious Logon Hunting Query
+SigninLogs
+| where ResultType != "0"
+| where TimeGenerated > ago(7d)
+| summarize count() by UserPrincipalName, IPAddress, bin(TimeGenerated, 1h)
+| where count_ > 5
+| project TimeGenerated, UserPrincipalName, IPAddress, count_
