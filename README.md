@@ -4,6 +4,34 @@
 
 Develop a GitHub repository—**DefenderHunt**—that serves both as an **educational resource** and a **practical tool** for **SOC analysts, cloud security engineers, and cybersecurity students**. It demonstrates real-world threat hunting, incident response, and automation using Microsoft Defender tools, KQL, and MITRE ATT&CK.
 
+### Project Tree
+```
+DefenderHunt/
+├── README.md
+├── LICENSE
+├── CONTRIBUTING.md
+├── requirements.txt
+├── .gitignore
+├── docs/
+│   ├── MITRE_CheatSheet.md
+│   └── Incident_Playbooks.md
+└── src/
+    ├── threat_hunting/
+    │   ├── hunt_runner.py
+    │   └── queries/
+    │       ├── suspicious_logon.kql
+    │       └── lateral_movement.kql
+    ├── mitre_mapper/
+    │   └── mitre_mapper.py
+    ├── automation/
+    │   ├── report_generator.py
+    │   └── enrich_alerts.py
+    ├── cloud_config_checker/
+    │   └── azure_config_check.py
+    └── simulation/
+        └── simulate_incident.py
+```
+
 ## 2. Core Components & Functionality
 
 - **Threat Hunting Playbooks**  
