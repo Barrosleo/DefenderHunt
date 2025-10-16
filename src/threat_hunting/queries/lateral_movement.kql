@@ -1,0 +1,7 @@
+// Lateral Movement Hunting Query
+DeviceLogonEvents
+| where ActionType == "Logon"
+| where LogonType == "RemoteInteractive"
+| summarize dcount(AccountName) by DeviceName, bin(TimeGenerated, 1h)
+| where dcount_ > 3
+| project TimeGenerated, DeviceName, dcount_
