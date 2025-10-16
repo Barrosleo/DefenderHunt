@@ -1,0 +1,5 @@
+pandas
+plotly
+jinja2
+azure-identity
+azure-mgmt-security
